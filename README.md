@@ -2,7 +2,7 @@
  
 Landing page de alta conversão desenvolvida para a **MonaGelato**, marca de sorvetes artesanais que vende via delivery (99 Food e iFood).
  
-🔗 **[Ver site publicado](#)** _(link do GitHub Pages será adicionado após a publicação)_
+🔗 **[Ver site publicado](https://laryssasouzacs.github.io/monagelato/)**
  
 ## Sobre o projeto
  
