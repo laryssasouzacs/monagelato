@@ -1,6 +1,6 @@
-# 🍨MonaGelato — Landing Page
+# 🍦MonaGelato — Landing Page
  
-Landing page de alta conversão desenvolvida para a **MonaGelato**, marca de sorvetes artesanais que vende via delivery (99 Food e iFood).
+Landing page de alta conversão desenvolvida para a **MonaGelato**, marca de sorvetes artesanais que vende via delivery.
  
 🔗 **[Ver site publicado](https://laryssasouzacs.github.io/monagelato/)**
  
