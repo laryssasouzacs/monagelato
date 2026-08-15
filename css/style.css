@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  /* compensa a altura do header fixo ao rolar até uma âncora */
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -15,25 +21,57 @@ a {
   color: inherit;
 }
 
+ul, ol {
+  list-style: none;
+}
+
 
 /* ===== VARIÁVEIS ===== */
 :root {
-  --bg-main: #FFF6F4;
-  --pink-strong: #E85D75;
-  --pink-medium: #F4B6C2;
-  --text-main: #3A2C2E;
-  --text-secondary: #8C6B70;
-  --white: #FFFFFF;
+  /* Paleta inspirada em gelateria italiana: pistache, cobre, marfim */
+  --bg-main: #FAF5EC;
+  --cream-alt: #F1E9D8;
+  --cream-card: #FFFCF6;
+  --ink: #241F1B;
+  --ink-soft: #6E6355;
+  --green: #426a56;
+  --green-dark: #365043;
+  --copper: #B8763E;
+  --copper-dark: #9C6230;
 
-  --font-title: 'Playfair Display', serif;
-  --font-body: 'Poppins', sans-serif;
+  --font-title: 'Fraunces', serif;
+  --font-body: 'Work Sans', sans-serif;
 }
 
 body {
   background: var(--bg-main);
-  color: var(--text-main);
+  color: var(--ink);
   font-family: var(--font-body);
   line-height: 1.6;
+}
+
+
+/* ===== TIPOGRAFIA COMPARTILHADA ===== */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 12px;
+}
+
+.eyebrow-center {
+  display: block;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: var(--ink);
 }
 
 
@@ -41,34 +79,34 @@ body {
 .btn {
   display: inline-block;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   padding: 14px 28px;
-  border-radius: 50px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn-primary {
-  background: var(--pink-strong);
-  color: var(--white);
-  box-shadow: 0 4px 14px rgba(232, 93, 117, 0.3);
+  background: var(--green);
+  color: var(--cream-card);
 }
 
 .btn-primary:hover {
-  background: #d94e67;
+  background: var(--green-dark);
   transform: translateY(-1px);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--pink-strong);
-  border: 1.5px solid var(--pink-strong);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
 }
 
 .btn-secondary:hover {
-  background: rgba(232, 93, 117, 0.06);
+  background: var(--ink);
+  color: var(--cream-card);
 }
 
 .btn-small {
@@ -77,10 +115,14 @@ body {
 }
 
 
-/* ===== HEADER ===== */
+/* ===== HEADER / NAVEGAÇÃO ===== */
 .header {
-  padding: 12px 24px;
-  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 14px 24px;
+  background: var(--bg-main);
+  border-bottom: 1px solid rgba(36, 31, 27, 0.08);
 }
 
 .header-container {
@@ -89,103 +131,132 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
 }
 
 .logo {
-  height: 56px;
+  height: 48px;
   width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--green);
 }
 
 
 /* ===== HERO ===== */
 .hero {
-  padding: 64px 24px;
-  text-align: center;
+  padding: 72px 24px;
 }
 
 .hero-container {
-  max-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.hero-texto {
+  flex: 1;
 }
 
 .hero h1 {
-  font-family: var(--font-title);
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: 16px;
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 18px;
 }
 
-.hero p {
-  color: var(--text-secondary);
-  font-size: 16px;
+.hero-texto > p {
+  color: var(--ink-soft);
+  font-size: 17px;
   margin-bottom: 32px;
+  max-width: 460px;
 }
 
 .hero-btns {
   display: flex;
   gap: 14px;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
-/* ===== SABORES + DIFERENCIAIS (título + container compartilhados) ===== */
-.sabores,
+.hero-img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  /* aspect-ratio mantém a imagem sempre quadrada, em qualquer tamanho de tela —
+     diferente de "height" fixo, que não se ajusta quando a largura encolhe */
+  border-radius: 63% 37% 54% 46% / 43% 47% 53% 57%;
+}
+
+
+/* ===== DESTAQUES + DIFERENCIAIS (título + container compartilhados) ===== */
+.destaques,
 .diferenciais {
   padding: 64px 24px;
 }
 
-.sabores-container,
+.destaques-container,
 .diferenciais-container {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
-.sabores h2,
+.destaques h2,
 .diferenciais h2 {
-  font-family: var(--font-title);
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 30px;
   margin-bottom: 40px;
 }
 
 
 /* ===== GRID DE CARDS ===== */
-.sabores-grid,
+.destaques-grid,
 .diferenciais-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-bottom: 40px;
   text-align: left;
 }
 
 
-/* ===== CARD (usado em Sabores E Diferenciais) ===== */
+/* ===== CARD (usado em Destaques E Diferenciais) ===== */
 .card {
   position: relative;
-  background: var(--white);
+  background: var(--cream-card);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 16px rgba(36, 31, 27, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 28px rgba(36, 31, 27, 0.12);
 }
 
 .card-badge {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: var(--pink-strong);
-  color: var(--white);
+  background: var(--copper);
+  color: var(--cream-card);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 4px 10px;
   border-radius: 50px;
   z-index: 1;
@@ -211,47 +282,97 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--pink-medium);
-  color: var(--pink-strong);
+  background: var(--cream-alt);
+  color: var(--green);
   margin-bottom: 16px;
   font-size: 22px;
 }
 
 .card h3 {
-  font-family: var(--font-title);
   font-size: 18px;
-  font-weight: 600;
   margin-bottom: 8px;
 }
 
 .card p {
-  color: var(--text-secondary);
+  color: var(--ink-soft);
   font-size: 14px;
 }
 
 
-/* ===== PRÉVIA DE CATEGORIAS (seção Sabores) ===== */
-.categorias-preview {
+/* ===== CARDÁPIO ===== */
+.cardapio {
+  padding: 64px 24px;
+  background: var(--cream-alt);
+}
+
+.cardapio-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cardapio h2 {
+  font-size: 30px;
+  margin-bottom: 48px;
+}
+
+.cardapio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: left;
+}
+
+.cardapio-categoria h3 {
+  font-size: 18px;
+  color: var(--green);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--copper);
+  display: inline-block;
+}
+
+.menu-lista li {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 24px;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 15px;
 }
 
-.categoria-chip {
-  background: var(--pink-medium);
-  color: var(--text-main);
-  font-size: 13px;
-  padding: 6px 14px;
-  border-radius: 50px;
+.menu-item {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.menu-item::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  margin-left: 6px;
+  border-bottom: 1.5px dotted var(--ink-soft);
+  opacity: 0.4;
+  transform: translateY(-4px);
+}
+
+.menu-preco {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.menu-star {
+  font-size: 10px;
+  color: var(--copper);
+  margin-left: 2px;
 }
 
 
-/* ===== SOBRE A MONA ===== */
+/* ===== SOBRE ===== */
 .sobre {
   padding: 64px 24px;
-  background: var(--white);
+  background: var(--bg-main);
 }
 
 .sobre-container {
@@ -279,14 +400,12 @@ body {
 }
 
 .sobre-texto h2 {
-  font-family: var(--font-title);
   font-size: 28px;
-  font-weight: 600;
   margin-bottom: 16px;
 }
 
-.sobre-texto p {
-  color: var(--text-secondary);
+.sobre-texto > p {
+  color: var(--ink-soft);
   font-size: 15px;
 }
 
@@ -294,15 +413,15 @@ body {
   display: inline-block;
   margin-top: 16px;
   font-size: 14px;
-  font-weight: 500;
-  color: var(--pink-strong);
-  border-bottom: 1.5px solid var(--pink-strong);
+  font-weight: 600;
+  color: var(--green);
+  border-bottom: 1.5px solid var(--green);
   padding-bottom: 2px;
 }
 
 .link-ebook:hover {
-  color: #d94e67;
-  border-color: #d94e67;
+  color: var(--green-dark);
+  border-color: var(--green-dark);
 }
 
 
@@ -318,14 +437,11 @@ body {
 }
 
 .como-pedir h2 {
-  font-family: var(--font-title);
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 30px;
   margin-bottom: 40px;
 }
 
 .passos {
-  list-style: none;
   display: flex;
   justify-content: center;
   gap: 32px;
@@ -344,8 +460,8 @@ body {
   width: 48px;
   height: 48px;
   margin: 0 auto 16px;
-  background: var(--pink-strong);
-  color: var(--white);
+  background: var(--green);
+  color: var(--cream-card);
   border-radius: 50%;
   font-family: var(--font-title);
   font-weight: 600;
@@ -353,8 +469,68 @@ body {
 }
 
 .passos p {
-  color: var(--text-secondary);
+  color: var(--ink-soft);
   font-size: 15px;
+}
+
+
+/* ===== DEPOIMENTOS ===== */
+.depoimentos {
+  padding: 64px 24px;
+  background: var(--cream-alt);
+}
+
+.depoimentos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.depoimentos h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.depoimento-card {
+  background: var(--cream-card);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 16px rgba(36, 31, 27, 0.06);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--copper);
+  color: var(--cream-card);
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.depoimento-texto {
+  font-size: 15px;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.depoimento-nome {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
 }
 
 
@@ -362,7 +538,7 @@ body {
 .cta-final {
   padding: 64px 24px;
   text-align: center;
-  background: var(--pink-medium);
+  background: var(--green);
 }
 
 .cta-final-container {
@@ -371,16 +547,33 @@ body {
 }
 
 .cta-final h2 {
-  font-family: var(--font-title);
   font-size: 28px;
-  font-weight: 600;
+  color: var(--cream-card);
   margin-bottom: 12px;
 }
 
 .cta-final p {
-  color: var(--text-main);
+  color: var(--cream-alt);
   font-size: 16px;
   margin-bottom: 32px;
+}
+
+.cta-final .btn-primary {
+  background: var(--copper);
+}
+
+.cta-final .btn-primary:hover {
+  background: var(--copper-dark);
+}
+
+.cta-final .btn-secondary {
+  color: var(--cream-card);
+  border-color: var(--cream-card);
+}
+
+.cta-final .btn-secondary:hover {
+  background: var(--cream-card);
+  color: var(--green);
 }
 
 .cta-final-btns {
@@ -395,7 +588,7 @@ body {
 .footer {
   padding: 40px 24px;
   text-align: center;
-  background: var(--text-main);
+  background: var(--ink);
 }
 
 .footer-container {
@@ -404,7 +597,7 @@ body {
 }
 
 .footer-nome {
-  color: var(--white);
+  color: var(--cream-card);
   font-family: var(--font-title);
   font-size: 16px;
   margin-bottom: 16px;
@@ -419,33 +612,49 @@ body {
 
 .footer-links a {
   display: inline-block;
-  color: var(--pink-medium);
+  color: var(--cream-alt);
   font-size: 14px;
   padding: 8px 4px;
 }
 
 .footer-links a:hover {
-  color: var(--white);
+  color: var(--copper);
 }
 
 .footer-copy {
-  color: var(--text-secondary);
+  color: var(--ink-soft);
   font-size: 12px;
 }
 
 
-/* ===== RESPONSIVO - MOBILE (único breakpoint, 600px) ===== */
-@media (max-width: 600px) {
+/* ===== RESPONSIVO - MOBILE ===== */
+@media (max-width: 760px) {
+  .nav-links {
+    display: none;
+    /* Sem menu hambúrguer (decisão consciente de manter o projeto sem JS) —
+       no mobile, a navegação principal continua acessível rolando a página,
+       já que ela é curta o suficiente para isso */
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-container {
+    flex-direction: column-reverse;
+  }
+
   .hero h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
-  .hero p {
-    font-size: 15px;
+  .hero-visual {
+    max-width: 260px;
+    margin: 0 auto;
   }
 
-  .sabores-grid,
-  .diferenciais-grid {
+  .destaques-grid,
+  .diferenciais-grid,
+  .cardapio-grid,
+  .depoimentos-grid {
     grid-template-columns: 1fr;
   }
 

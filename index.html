@@ -4,22 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MonaGelato — Sorvete artesanal</title>
+  <title>Gelato House — Sorvete artesanal</title>
   <meta name="description"
-    content="Sorvete artesanal feito à mão pela MonaGelato. Receitas próprias, sabores exclusivos como pudim e café. Peça agora pelo 99 Food!">
+    content="Sorvete artesanal feito à mão pela Gelato House. Receitas próprias, cardápio completo e sabores exclusivos. Peça agora!">
 
-  <!-- Open Graph: controla como o link aparece ao compartilhar -->
-  <meta property="og:title" content="MonaGelato — Sorvete artesanal feito com carinho">
-  <meta property="og:description"
-    content="Sorvete artesanal feito à mão, com receita própria e sabores exclusivos. Peça agora pelo 99 Food!">
-  <meta property="og:image" content="img/banners/mona.jpg">
+  <meta property="og:title" content="Gelato House — Sorvete artesanal feito com carinho">
+  <meta property="og:description" content="Sorvete artesanal feito à mão, com receita própria e sabores exclusivos.">
+  <meta property="og:image" content="img/banners/equipe-gelato-house.jpg">
   <meta property="og:type" content="website">
 
   <link rel="icon" type="image/x-icon" href="img/logo/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <link rel="stylesheet" href="css/style.css">
@@ -29,84 +27,124 @@
 
   <header class="header">
     <div class="header-container">
-      <img src="img/logo/logo-monagelato.png" alt="Logo MonaGelato" class="logo">
-      <a href="https://oia.99app.com/dlp9/hjBP59?share_media=WHATSAPP" rel="noopener noreferrer" class="btn btn-primary btn-small">Bora pedir</a>
+      <img src="img/logo/logo-gelato-house-sem-fundo.png" alt="Logo Gelato House" class="logo">
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#como-pedir">Como pedir</a>
+      </nav>
+
+      <a href="https://99app.com/99food/" class="btn btn-primary btn-small">Peça agora</a>
     </div>
   </header>
 
   <section class="hero">
     <div class="hero-container">
-      <h1>Sorvete artesanal feito com carinho, direto da minha cozinha pra sua casa.</h1>
-      <p>Receitas próprias, sabores que eu mesma testei até ficarem perfeitos — e todo o carinho de quem largou o CLT pra fazer o que ama.</p>
-      <div class="hero-btns">
-        <a href="https://oia.99app.com/dlp9/hjBP59?share_media=WHATSAPP" rel="noopener noreferrer" class="btn btn-primary">Pedir no 99 Food</a>
-        <a href="https://www.instagram.com/monagelato/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Me segue no Instagram</a>
+      <div class="hero-texto">
+        <span class="eyebrow">Sorvete artesanal</span>
+        <h1>Cada colherada carrega a receita de quem faz com as próprias mãos.</h1>
+        <p>Sabores desenvolvidos com cuidado, ingredientes selecionados e todo o capricho de uma gelateria que não abre mão do artesanal.</p>
+        <div class="hero-btns">
+          <a href="#cardapio" class="btn btn-primary">Ver cardápio</a>
+          <a href="https://www.instagram.com/" class="btn btn-secondary">Seguir no Instagram</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="img/banners/banner-gelato-house.png" alt="Pote de sorvete artesanal Gelato House em destaque" class="hero-img" loading="lazy">
       </div>
     </div>
   </section>
 
-  <section class="sabores">
-    <div class="sabores-container">
-      <h2>Os sabores que tão fazendo sucesso por aqui</h2>
+  <section class="destaques">
+    <div class="destaques-container">
+      <span class="eyebrow eyebrow-center">Os favoritos da casa</span>
+      <h2>Sabores que tão fazendo sucesso por aqui</h2>
 
-      <div class="sabores-grid">
+      <div class="destaques-grid">
 
         <div class="card">
-          <span class="card-badge">Mais pedido</span>
-          <img src="img/produtos/sorvete-pacoca.jpg" alt="Pote de sorvete artesanal tradicional sabor paçoca, 500ml"
-            class="card-img" loading="lazy">
-          <h3>Paçoca</h3>
-          <p>Sorvete tradicional com aquele gostinho de paçoca de verdade — 500ml de puro carinho.</p>
+          <span class="card-badge">Favorito</span>
+          <img src="img/produtos/sorvete-pistache.png" alt="Pote de sorvete artesanal sabor pistache com pedaços crocantes" class="card-img" loading="lazy">
+          <h3>Pistache</h3>
+          <p>Cremoso, com pedacinhos crocantes de pistache espalhados na massa — um clássico que nunca decepciona.</p>
         </div>
 
         <div class="card">
-          <span class="card-badge">Mais pedido</span>
-          <img src="img/produtos/sorvete-oreo-avela.jpg"
-            alt="Pote de sorvete gourmet sabor creme com oreo e creme de avelã, 350ml" class="card-img" loading="lazy">
-          <h3>Creme com Oreo e Avelã</h3>
-          <p>Gourmet, cremoso e irresistível — a combinação perfeita de oreo com creme de avelã, 350ml.</p>
+          <span class="card-badge">Favorito</span>
+          <img src="img/produtos/sorvete-frutas-vermelhas.jpg" alt="Pote de sorvete gourmet de frutas vermelhas com chocolate branco" class="card-img" loading="lazy">
+          <h3>Frutas Vermelhas com Chocolate Branco</h3>
+          <p>Gourmet, com o equilíbrio perfeito entre a acidez das frutas vermelhas e a doçura do chocolate branco.</p>
         </div>
 
         <div class="card">
-          <span class="card-badge">Mais pedido</span>
-          <img src="img/produtos/sorvete-flocos.jpg" alt="Pote de sorvete artesanal tradicional sabor flocos, 500ml"
-            class="card-img" loading="lazy">
-          <h3>Flocos</h3>
-          <p>Um clássico que nunca sai de moda, cremoso e cheio dos flocos de chocolate que você ama. 500ml.</p>
+          <span class="card-badge">Favorito</span>
+          <img src="img/produtos/sorvete-baunilha-caramelo.jpg" alt="Pote de sorvete artesanal de baunilha com caramelo salgado" class="card-img" loading="lazy">
+          <h3>Baunilha com Caramelo Salgado</h3>
+          <p>Base cremosa de baunilha com um toque de caramelo salgado que arremata cada colherada.</p>
         </div>
 
       </div>
-
-      <div class="categorias-preview">
-        <span class="categoria-chip">Ofertas</span>
-        <span class="categoria-chip">Preferidos</span>
-        <span class="categoria-chip">Combos</span>
-        <span class="categoria-chip">Gourmet</span>
-        <span class="categoria-chip">Picolés Trufados</span>
-        <span class="categoria-chip">Tradicionais</span>
-      </div>
-
-      <a href="https://oia.99app.com/dlp9/hjBP59?share_media=WHATSAPP" rel="noopener noreferrer" class="btn btn-secondary">Ver cardápio completo</a>
     </div>
   </section>
 
-  <section class="sobre">
+  <section class="cardapio" id="cardapio">
+    <div class="cardapio-container">
+      <span class="eyebrow eyebrow-center">Nosso cardápio</span>
+      <h2>Do clássico ao mais ousado</h2>
+
+      <div class="cardapio-grid">
+
+        <div class="cardapio-categoria">
+          <h3>Tradicionais</h3>
+          <ul class="menu-lista">
+            <li><span class="menu-item">Baunilha Clássica</span><span class="menu-preco">R$ 18</span></li>
+            <li><span class="menu-item">Chocolate Belga</span><span class="menu-preco">R$ 18</span></li>
+            <li><span class="menu-item">Morango com Leite Ninho</span><span class="menu-preco">R$ 19</span></li>
+          </ul>
+        </div>
+
+        <div class="cardapio-categoria">
+          <h3>Gourmet</h3>
+          <ul class="menu-lista">
+            <li><span class="menu-item">Pistache <i class="bi bi-star-fill menu-star" aria-label="Favorito"></i></span><span class="menu-preco">R$ 22</span></li>
+            <li><span class="menu-item">Frutas Vermelhas c/ Chocolate Branco <i class="bi bi-star-fill menu-star" aria-label="Favorito"></i></span><span class="menu-preco">R$ 23</span></li>
+            <li><span class="menu-item">Baunilha c/ Caramelo Salgado <i class="bi bi-star-fill menu-star" aria-label="Favorito"></i></span><span class="menu-preco">R$ 22</span></li>
+          </ul>
+        </div>
+
+        <div class="cardapio-categoria">
+          <h3>Picolés</h3>
+          <ul class="menu-lista">
+            <li><span class="menu-item">Limão Siciliano</span><span class="menu-preco">R$ 9</span></li>
+            <li><span class="menu-item">Chocolate ao Leite</span><span class="menu-preco">R$ 9</span></li>
+            <li><span class="menu-item">Coco Queimado</span><span class="menu-preco">R$ 10</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
     <div class="sobre-container">
-      <img src="img/banners/mona.jpg" alt="Mona preparando sorvete artesanal na cozinha" class="sobre-img" loading="lazy">
+      <img src="img/banners/equipe-gelato-house.png" alt="Equipe da Gelato House preparando sorvete artesanal" class="sobre-img" loading="lazy">
 
       <div class="sobre-texto">
-        <h2>Do escritório pra cozinha, com muito propósito</h2>
-        <p>Sou mãe de 7 filhos e um dia decidi trocar o CLT pela cozinha de casa. Comecei do zero, testando receita atrás de receita até encontrar o sabor que realmente tem a minha cara. Hoje, cada pote carrega um pouquinho dessa história — feito à mão, com carinho, pensando em vocês que acompanham cada passo comigo.</p>
-        <a href="https://pay.kiwify.com.br/zYhGtBr?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAactSczpT1bqoxXGSkFR3q6e8l3DhDcm6bhfoyzFnZTTm80zOipYv079wx9jFA_aem_NCszD891EU7Bj9oB9YTsFw&utm_id=97760_v0_s00_e0_tv3" target="_blank" rel="noopener noreferrer" class="link-ebook">
-          Quer aprender minhas receitas? Baixe meu e-book
-        </a>
+        <span class="eyebrow">Nossa história</span>
+        <h2>Uma paixão que virou sorvete</h2>
+        <p>A Gelato House nasceu da vontade de transformar receitas de família em sorvetes artesanais de verdade. Começamos pequenos, testando sabores até criar uma linha própria que hoje é a cara da marca. Cada pote carrega esse cuidado artesanal, feito em pequenos lotes, pensado pra quem ama sorvete de verdade.</p>
+        <a href="#" class="link-ebook">Quer conhecer nossas receitas? Baixe nosso guia de sabores</a>
       </div>
     </div>
   </section>
 
-  <section class="diferenciais">
+  <section class="diferenciais" id="diferenciais">
     <div class="diferenciais-container">
-      <h2>O que faz meu sorvete ser diferente</h2>
+      <span class="eyebrow eyebrow-center">Por que a Gelato House</span>
+      <h2>O que faz nosso sorvete ser diferente</h2>
 
       <div class="diferenciais-grid">
 
@@ -132,52 +170,82 @@
     </div>
   </section>
 
-  <section class="como-pedir">
+  <section class="como-pedir" id="como-pedir">
     <div class="como-pedir-container">
+      <span class="eyebrow eyebrow-center">Simples assim</span>
       <h2>Bora fazer seu pedido? É rapidinho</h2>
 
       <ol class="passos">
         <li>
           <span class="passo-numero" aria-hidden="true">1</span>
-          <p>Clica no botão abaixo</p>
+          <p>Escolha seu sabor no cardápio</p>
         </li>
         <li>
           <span class="passo-numero" aria-hidden="true">2</span>
-          <p>Escolhe seu sabor favorito no 99 Food</p>
+          <p>Clique no botão de pedido</p>
         </li>
         <li>
           <span class="passo-numero" aria-hidden="true">3</span>
-          <p>Finaliza o pedido e já pode esperar sentadinha</p>
+          <p>Finalize e já pode esperar sentadinho</p>
         </li>
       </ol>
 
-      <a href="https://oia.99app.com/dlp9/hjBP59?share_media=WHATSAPP" rel="noopener noreferrer" class="btn btn-primary">Pedir agora</a>
+      <a href="https://99app.com/99food/" class="btn btn-primary">Pedir agora</a>
+    </div>
+  </section>
+
+  <section class="depoimentos">
+    <div class="depoimentos-container">
+      <span class="eyebrow eyebrow-center">Quem já provou</span>
+      <h2>O que dizem sobre a gente</h2>
+
+      <div class="depoimentos-grid">
+
+        <div class="depoimento-card">
+          <div class="avatar" aria-hidden="true">F</div>
+          <p class="depoimento-texto">"Já testei metade do cardápio e não errei uma vez. O pistache é surreal."</p>
+          <p class="depoimento-nome">Fernanda R.</p>
+        </div>
+
+        <div class="depoimento-card">
+          <div class="avatar" aria-hidden="true">M</div>
+          <p class="depoimento-texto">"Pedido chegou rapidinho e ainda vinha bem geladinho. Virei cliente fixo."</p>
+          <p class="depoimento-nome">Marcos T.</p>
+        </div>
+
+        <div class="depoimento-card">
+          <div class="avatar" aria-hidden="true">J</div>
+          <p class="depoimento-texto">"Dá pra sentir que é feito com carinho mesmo. Recomendo demais."</p>
+          <p class="depoimento-nome">Juliana P.</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <section class="cta-final">
     <div class="cta-final-container">
-      <h2>Bateu aquela vontade de sorvete, gostosa?</h2>
+      <h2>Bateu aquela vontade de sorvete?</h2>
       <p>Então corre pedir o seu — feito com o mesmo carinho de sempre.</p>
 
       <div class="cta-final-btns">
-        <a href="https://oia.99app.com/dlp9/hjBP59?share_media=WHATSAPP" rel="noopener noreferrer" class="btn btn-primary">Pedir no 99 Food</a>
-        <a href="https://www.instagram.com/monagelato/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Me segue no Instagram</a>
+        <a href="https://99app.com/99food/" class="btn btn-primary">Fazer pedido</a>
+        <a href="https://www.instagram.com/" class="btn btn-secondary">Seguir no Instagram</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-container">
-      <p class="footer-nome">MonaGelato — Sorvetes artesanais feitos à mão, com carinho</p>
+      <p class="footer-nome">Gelato House — Sorvetes artesanais feitos à mão</p>
 
       <nav class="footer-links" aria-label="Redes sociais e pedidos">
-        <a href="https://oia.99app.com/dlp9/hjBP59?share_media=WHATSAPP" rel="noopener noreferrer">99 Food</a>
-        <a href="https://www.instagram.com/monagelato/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.facebook.com/people/Monagelato/61576354935740/?ref=PROFILE_EDIT_xav_ig_profile_page_web#" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://99app.com/99food/">Pedidos</a>
+        <a href="https://www.instagram.com/">Instagram</a>
+        <a href="https://www.facebook.com/">Facebook</a>
       </nav>
 
-      <p class="footer-copy">&copy; 2026 MonaGelato. Todos os direitos reservados.</p>
+      <p class="footer-copy">&copy; 2026 Gelato House. Todos os direitos reservados.</p>
     </div>
   </footer>
 
